@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Sign In</title>
+        <link rel="stylesheet" href="css/styles1.css"></link>
+    </h:head>
+    <h:body class="background">
+     <!-- Start Header -->
+    <nav>
+        <div class="navigasi">
+            <div class="logo"><img src="images/logowhite.png" width="90" height="30" style="margin-top: 10px;"/></div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="home.xhtml" style="color:white">Home</a></li>
+                        <li><a href="listharga.xhtml" style="color:white">List Harga</a></li>
+                        <li><a href="transaksi.xhtml" style="color:white">Transaksi</a></li>
+                        <li><a href="kontak.xhtml" style="color:white">Kontak Kami</a></li>
+                        <li><a href="Login.xhtml" style="color:white">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+    <!-- End Header -->
+        <h:form class="model_content">
+            <h2>Sign In</h2>
+            Username  : <h:inputText  class="input_text" value="#{user.username}"/> <br/>
+            Password  : <h:inputSecret  class="input_text" value="#{user.password}"/>
+            <h:commandButton value="Login" class="button_log" action="#{user.login_user()}"/>
+             <h:commandButton value="Sign Up" class="button_log" action="/Sign Up.xhtml"/>
+        </h:form>
+
+     <!--Footer-->
+    <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-1">
+                        <div class="download">
+
+                            <p>Unduh dan mainkan PUBG Mobile sekarang!</p>
+            
+                                    <div class="hyperlinkimage">
+                                    <ul>
+                                    <li><a href="https://www.pubgmobile.com/id/home.shtml">
+                                    <img src="images/googleplay.png" width="110" height="33"/></a></li>
+                                    <li><a href="https://apps.apple.com/id/app/pubg-mobile/id1330123889?l=id">
+                                    <img src="images/appstore.png" width="110" height="33"/></a></li>
+                                    </ul>
+                                </div>
+                    </div>
+                        <div class="footer-col-2">
+                            <img src="images/logowhite.png"/>    
+                </div>
+                <hr/>
+                    <p class="copyright"> Copyright 2022 - Group 2</p>
+                </div>
+            </div>
+       </div>
+        </div>
+    </h:body>
+</html> 

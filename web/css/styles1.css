@@ -1,0 +1,412 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 10, 2022, 10:41:34 PM
+    Author     : Muhammad Ragil Shafa
+*/
+
+*{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+  background-color: #4C3A51;
+  font-family: system-ui;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    line-height: 49px;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color:black;
+    font-size: 14px;
+    font-family: system-ui;
+    font-weight: normal;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li{
+    float: left;
+}
+
+nav ul li a{
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #E7AB79;
+  color: rgb(169, 167, 167);
+}
+
+
+.navigasi{
+width: 1100px;
+margin: auto;
+position: relative;
+background-color: black;
+color: #8a8a8a;
+align-items: center;
+}
+
+.logo {
+    float: left;
+    padding: 0%;
+  
+}
+
+.menu{
+    float: right;
+}
+
+.container {
+
+  width: 1000px;
+  margin: auto;
+  background-color: #4C3A51;
+  color: white;
+  align-items: center;
+  
+}
+
+.header {
+  padding: 20px;
+}
+
+.header .judul {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: system-ui;
+  color: white;
+}
+
+.player {
+  float :left;
+  margin-top: 50px;
+  margin-right: 25px;
+}
+
+.content p {
+  font-family: system-ui;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: normal;
+}
+
+.paragraf {
+  font-family: system-ui;
+  font-size: 20px;
+  margin-top: 70px;
+  line-height: 31px;
+  font-weight: normal;
+}
+
+.hyperlinkimage ul li{
+      display: inline-block;
+      margin-top: 26px;
+      padding-right: 9px;
+}
+
+.hyperlinkimage img:hover{
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+.download {
+    font-family: system-ui;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 7px;
+  background-color: #f7f7f7;
+  color: black;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.button{
+  padding-top: 25px;
+
+}
+
+.buttonharga{
+  flex-direction: column;
+  text-decoration: none;
+  padding: 17px 27px;
+  font-size: 15px;
+  margin: 32px;
+  background-color: #fdfaff;
+  color:black;
+  border-radius: 30px;
+  transition: transform 0.3s ease;
+  font-family: system-ui;
+}
+
+.buttonharga:hover{
+  border: 3px solid black;
+}
+
+table {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.panduanpembayaran{
+  line-height: 30px;
+  margin-left: 15px;
+  color: white;
+}
+
+.kontak{
+  line-height: 44px;
+  padding-top: 300px;
+  padding-bottom: 300px;
+}
+
+.form{
+  padding-top: 120px;
+  font-family: system-ui;
+  padding-bottom: 180px;
+}
+
+.transaksi{
+  background-color: #f6edfd;
+  width: 690px;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.transaksi .forminput{
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.transaksi .forminput input{
+  height: 50px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.transaksi .forminput input[type="submit"]{
+  margin-top: 30px;
+  background-color: #e0b3ff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50%;
+  transform: 0.5;
+}
+
+.transaksi .forminput input[type="submit"]:hover{
+  opacity: 0.7;
+}
+
+.bayar ul li{
+  display: inline-block;
+}
+
+label{
+  position: relative;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#label1{
+  width: 50%;
+  padding: 10px 12px;
+  position: static;
+}
+
+#label2{
+  width: 50%;
+  padding: 10px 8px;
+  position: static;
+}
+
+#label3{
+  width: 50%;
+  padding: 10px 6px;
+  position: static;
+}
+
+#hargadiamond{
+  box-sizing: border-box; 
+  border-radius: 7px; 
+  border: 2px solid black; 
+  padding-top: 8px; 
+  padding-bottom: 8px; 
+  padding-left: 7px;
+  background-color: white;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: system-ui;
+  width: 20%;
+  background-color: #fcfaff;
+}
+
+.view {
+  font-family: sytem-ui;
+  margin-top: 30px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  background-color: #eee5ff;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transform: 0.5;
+}
+.view:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+.footer{
+  background: rgb(0, 0, 0);
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 60px 0 20px;
+  
+}
+
+.footer p{
+  color: 8a8a8a;
+  background: black;
+}
+
+.footer h3{
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  background: black;
+}
+
+
+.footer-col-1{
+  background: black;
+  color: #ffffff;
+  text-align: center;
+}
+.footer-col-2{
+  flex: 1;
+  text-align: center;
+  background: black;
+  
+}
+
+.footer-col-2 img{
+  width: 360px;
+  margin-bottom: 20px;
+  background: black;
+}
+
+.copyright{
+  background: black;
+  background-color: black;
+}
+
+/* LOGIN */
+ .input_text[type=text],input[type=password]
+        {
+            width: 60%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-black;
+            border: 1px solid #ccc;
+        }
+        
+        .button_log
+        {
+            background-color: black;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 55%;
+        }
+        
+        .model_content
+        {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            border: 1px solid #888;
+            width: 50%;
+            text-align: center;
+        }
+        
+       
+        
+   /* Sign Up */
+   .input_text[type=text],input[type=password]
+        {
+            width: 60%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-black;
+            border: 1px solid #ccc;
+        }
+        
+        .button_log
+        {
+            background-color:black;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 55%;
+        }
+        
+        .model_content
+        {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            border: 1px solid #888;
+            width: 50%;
+            text-align: center;
+        }
+        
+        

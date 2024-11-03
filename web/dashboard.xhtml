@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+         <link rel="stylesheet" type="text/css" href="css/styles2.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
+        <script src="https://kit.fontawesome.com/6f53881389.js"></script>
+        <title>Data Admin</title>
+    </h:head>
+    <h:body>
+        <header id="header" class="header fix sticky-top">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="index.xhtml" class="logo d-flex align-items-center">
+            <span>Data Admin</span>
+            </a>
+
+        <!-- Navbar -->
+
+            <nav id="navbar" class="navbar">
+            <ul>
+               <li><a class="nav-link" href="dashboard.xhtml">Data Admin</a></li>
+                <li><a class="nav-link" href="Data Customer.xhtml">Data Customer</a></li>
+                <li><a class="getstarted scrollto" href="Login.xhtml">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+      </header>
+            <h:form class="container">
+            <h2 class="h2">Account Admin</h2><br/>
+            <h:dataTable class="table" border="1" value="#{user.getAllRecords()}" var="user">
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                    #{user.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Username</f:facet>
+                    #{user.username}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Password</f:facet>
+                    #{user.password}
+            </h:column>
+            </h:dataTable>
+            <hr/>
+            </h:form>
+            <h:form class="container">
+            <div class="form-group">
+            <h2 class="h2">Mencari Data Admin</h2>&nbsp;
+            <h:inputText class="form-control form-control-lg" a:placeholder="ID" id="id" value="#{user.id}"/><br/>&nbsp;
+            <h:commandButton class="btn btn-primary" value="Search" type="submit" action="#{user.getbyID()}"/><br/>
+            </div>
+            <hr/>
+            </h:form>
+            <h:form class="container">
+            <div class="form-group">
+            <h2 class="h2">Mengisi Data Admin</h2>&nbsp;
+            <div class="form-group">
+                <h:inputText class="form-control form-control-lg" a:placeholder="ID" id="id" value="#{user.id}"/><br/>&nbsp;
+            </div>
+            <div class="invalid-feedback">
+                Please enter a ID
+             </div>
+            <div class="form-group">
+                <h:inputText class="form-control form-control-lg" a:placeholder="Username" id="username" value="#{user.username}"/><br/>&nbsp;
+            </div>
+            <div class="invalid-feedback">
+                   Please enter a Username
+             </div>
+            <div class="form-group">
+                <h:inputText class="form-control form-control-lg" a:placeholder="Password" id="password" value="#{user.password}"/><br/>&nbsp;
+            </div>
+            <div class="invalid-feedback">
+                 Please enter a Password
+            </div>
+            <div class="form-group">
+                <h:commandButton class="btn btn-primary" value="Save" action="#{user.save_user()}"/>&nbsp;
+                <h:commandButton class="btn btn-primary" value="Edit" action="#{user.editUser()}"/>&nbsp; 
+                <h:commandButton class="btn btn-danger" value="Delete" action="#{user.deleteUser()}"/>&nbsp;
+            </div>
+            </div>
+            <hr/>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Transaksi</title>
+        <link rel="stylesheet" href="css/styles1.css"></link>
+    </h:head>
+    <h:body>
+        <nav>
+        <div class="navigasi">
+            <div class="logo"><img src="images/logowhite.png" width="90" height="30" style="margin-top: 10px;"/></div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="home.xhtml" style="color:white">Home</a></li>
+                        <li><a href="listharga.xhtml" style="color:white">List Harga</a></li>
+                        <li><a href="transaksi.xhtml" style="color:white">Transaksi</a></li>
+                        <li><a href="kontak.xhtml" style="color:white">Kontak Kami</a></li>
+                        <li><a href="Login.xhtml" style="color:white">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+
+        <div class="container">
+            <div class="header">
+                <div class="judul">
+                    <h6 style=" margin-top: 30px; margin-bottom: 10px;">Isi form di bawah ini untuk melakukan transaksi</h6>
+                    <p style="font-style: italic; font-size:13px; font-weight: normal;">Pastikan untuk mengisi User ID PUBG Mobile dengan benar.</p>
+            </div>
+        
+            <center>
+                <div class="form">
+                    <h:form>
+                        <div class="transaksi">
+                    
+                            <div class="forminput">
+                                <span><center style="margin-bottom: 27px; margin-top: 50px; font-size: 20px; font-family: system-ui;color: black;">Masukkan ID</center></span>
+                                <h:inputText value="#{customer.idGame}" id="ID" required=""/>
+                                <p style="font-style: italic; font-size:13px; font-weight: normal; margin-top: 10px; text-align: left;color: black;">Untuk mengetahui ID anda, silakan klik menu profile dibagian kiri atas pada menu utama game. Setelah itu, akan muncul ID kamu beserta nickname kamu. Contoh : ID:123456789.</p>
+                            </div>
+                            <div class="bayar"> 
+                                <span><center style="margin-bottom: 27px; margin-top: 50px; font-size: 20px; font-family: system-ui;color: black;">Pilih metode pembayaran</center></span>
+                                <ul>
+                                    <h:selectOneRadio value="#{customer.payment}" style="font-family: system-ui; font-size: 19px; margin-left: 170px; margin-right: 15px; color: black;">
+                                    <li><f:selectItem class="label1" itemValue="ShopeePay" itemLabel="ShopeePay" /></li>
+                                    <li><f:selectItem class="label1" itemValue="Gopay" itemLabel="Gopay" /></li> 
+                                    <li><f:selectItem class="label1" itemValue="OVO" itemLabel="OVO" /></li>
+                                    </h:selectOneRadio>
+                                </ul>
+                                
+                                <span><center style="margin-bottom: 10px; margin-top: 10px; font-size: 20px;color: black;">Pilih jumlah UC</center></span>
+                                <ul>
+                                    <h:selectOneRadio onclick="check();" value="#{customer.total}" required="true" style="font-family: system-ui; font-size: 19px; margin-left: 50px; margin-right: 15px;color: black; ">
+                                        <li><f:selectItem class="label1" itemValue="25 UC" itemLabel="25 UC" /></li>
+                                        <li><f:selectItem class="label1" itemValue="35+1 UC" itemLabel="35+1 UC" /></li> 
+                                        <li><f:selectItem class="label1" itemValue="50+2 UC" itemLabel="50+2 UC" /></li>
+                                        <li><f:selectItem class="label1" itemValue="70+3 UC" itemLabel="70+3 UC" /></li>
+                                        <li><f:selectItem class="label1" itemValue="125+6 UC" itemLabel="125+6 UC" /></li>
+                                    </h:selectOneRadio>
+                                </ul>
+                            </div>
+                            <div class="forminput">
+                                <span><center style="margin-bottom: 27px; margin-top: 50px; font-size: 20px; font-family: system-ui;color: black;">Nomor Telepon</center></span>
+                                <h:inputText value="#{customer.phone}" style= "width: 80%;" id="nomor" required="" onkeypress="checkNum();"/>
+                            </div> 
+                            <div class="forminput">
+                                <h:commandButton class="btn btn-primary" onclick="sub();" value="ORDER NOW" type="submit" action="#{customer.save_customer()}"/><br/>
+                            </div>
+                        </div>
+                    </h:form>   
+                </div> 
+            </center>
+            </div>
+        </div>
+            
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-1">
+                        <div class="download">
+
+                            <p>Unduh dan mainkan PUBG Mobile sekarang!</p>
+
+                                    <div class="hyperlinkimage">
+                                    <ul>
+                                    <li><a href="https://www.pubgmobile.com/id/home.shtml">
+                                    <img src="images/googleplay.png" width="110" height="33"/></a></li>
+                                    <li><a href="https://apps.apple.com/id/app/pubg-mobile/id1330123889?l=id">
+                                    <img src="images/appstore.png" width="110" height="33"/></a></li>
+                                    </ul>
+                                </div>
+                    </div>
+                        <div class="footer-col-2">
+                            <img src="images/logowhite.png"/>    
+                </div>
+                    </div>
+                <hr/>
+                    <p class="copyright"> Copyright 2022 - Group 2</p>
+                </div>
+            </div>
+        </div>
+    </h:body>
+    <script src="js/js.js"></script>
+</html>

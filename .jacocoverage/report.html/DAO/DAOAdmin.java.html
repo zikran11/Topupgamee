@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DAOAdmin.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;TopUPgame&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">DAO</a> &gt; <span class="el_source">DAOAdmin.java</span></div><h1>DAOAdmin.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package DAO;
+
+import POJO.UcTopUpUtil;
+import POJO.User;
+import java.util.ArrayList;
+import java.util.List;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+/**
+ *
+ * @author lenovo
+ */
+<span class="fc" id="L20">public class DAOAdmin {</span>
+    // untuk menampilkan data ke tabel
+    public List&lt;User&gt; retrveUser() {
+<span class="fc" id="L23">        List listUser = new ArrayList();</span>
+<span class="fc" id="L24">        Transaction transaction = null;</span>
+<span class="fc" id="L25">        Session session = UcTopUpUtil.getSessionFactory().openSession();</span>
+        try {
+<span class="fc" id="L27">            transaction = session.beginTransaction();</span>
+<span class="fc" id="L28">            Query query = session.createQuery(&quot;from User&quot;);</span>
+<span class="fc" id="L29">            listUser = query.list();</span>
+<span class="fc" id="L30">            transaction.commit();</span>
+<span class="nc" id="L31">        } catch (Exception e) {</span>
+<span class="nc" id="L32">            System.out.println(e);</span>
+<span class="fc" id="L33">        }</span>
+<span class="fc" id="L34">        return listUser;</span>
+    }
+   
+    
+     // untuk mencari/seach data, manipulasi data seperti delete, edit, dan search
+    public List&lt;User&gt; getbyID(String idUser) {
+<span class="fc" id="L40">        User user = new User();</span>
+<span class="fc" id="L41">        List&lt;User&gt; listUser = new ArrayList();</span>
+<span class="fc" id="L42">        Transaction transaction = null;</span>
+<span class="fc" id="L43">        Session session = UcTopUpUtil.getSessionFactory().openSession();</span>
+        
+        try {
+<span class="fc" id="L46">            transaction = session.beginTransaction();</span>
+<span class="fc" id="L47">            Query query = session.createQuery(&quot;from User where id = :id&quot;);</span>
+<span class="fc" id="L48">            query.setString(&quot;id&quot;, idUser);</span>
+<span class="fc" id="L49">            user = (User) query.uniqueResult();</span>
+<span class="fc" id="L50">            listUser = query.list();</span>
+<span class="fc" id="L51">            transaction.commit();</span>
+<span class="nc" id="L52">        } catch (Exception e) {</span>
+<span class="nc" id="L53">            System.out.println(e);</span>
+<span class="fc" id="L54">        }</span>
+<span class="fc" id="L55">        return listUser;</span>
+    }
+    
+    
+    // untuk delete berdcasarkan id
+    public void deleteUser(Integer idUser) {
+<span class="fc" id="L61">        Transaction transaction = null;</span>
+<span class="fc" id="L62">        Session session = UcTopUpUtil.getSessionFactory().openSession();</span>
+        try {
+<span class="fc" id="L64">            transaction = session.beginTransaction();</span>
+<span class="fc" id="L65">            User user = (User) session.load(User.class, new Integer(idUser));</span>
+<span class="nc" id="L66">            session.delete(user);</span>
+<span class="nc" id="L67">            transaction.commit();</span>
+<span class="fc" id="L68">        } catch (Exception e) {</span>
+<span class="fc" id="L69">            System.out.println(e);</span>
+<span class="nc" id="L70">        }</span>
+<span class="fc" id="L71">    }</span>
+    
+    // untuk edit
+    public void editUser(User user) {
+<span class="fc" id="L75">        Transaction transaction = null;</span>
+<span class="fc" id="L76">        Session session = UcTopUpUtil.getSessionFactory().openSession();</span>
+        try {
+<span class="fc" id="L78">            transaction = session.beginTransaction();</span>
+<span class="fc" id="L79">            session.update(user);</span>
+<span class="fc" id="L80">            transaction.commit();</span>
+<span class="nc" id="L81">        } catch (Exception e) {</span>
+<span class="nc" id="L82">            System.out.println(e);</span>
+<span class="fc" id="L83">        }</span>
+<span class="fc" id="L84">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
